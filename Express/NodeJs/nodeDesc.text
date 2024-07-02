@@ -1,0 +1,50 @@
+What is Node Js?
+ANS -; Node js is a run time environment of Javascript which allows Js to run on server side.
+It works on non blocking i/o and it is asychronous in nature.
+
+
+Some Points related to Nodejs
+
+1.Node.js was initially written by Ryan Dahl.
+2.Introduced in 27 may 2009.
+3.Current LTS version 20.11.1
+4.Current Non LTS version 21.6.2
+5.It is build on google's V8 engine
+6.It used Event Driver architecture.
+7.It works on the concept of Non blocking I/O (Input/Output).
+8.It is single threaded.
+9. It is asychronous.
+1. It is a framework of js.
+
+
+Features of Nodejs :
+1.Scalable
+2.Fast 
+4.asychronous
+5.Single-Threaded
+6.Cross-platform compatibility
+7.Fast data streaming
+
+
+What is Non blocking I/O in nodejs?
+Ans -:Non-blocking calls are the calls that do not block 
+the execution of other operations.
+In non-blocking operations, a single process is allowed to serve multiple
+requests simultaneously. Instead of waiting for completion,
+functions are delegated to the system to execute the next piece of code
+
+
+Some IMP modules of Nodejs : 
+
+1. OS 
+2. PATH
+3. Fs (file system)
+4. http
+5. EventEmmiter
+
+etc.
+
+Note : All these modules are inbuilt modules of nodejs so we dont have to
+       Install these through NPM.
+
+

@@ -1,0 +1,64 @@
+<html>  
+  <head>  
+    <title>File upload in Node.js by Javatpoint</title>  
+  </head> 
+
+  <body>
+    
+    
+      <h1>Express.js File Upload: by Javatpoint</h1>  
+      
+      <form id="upload"  enctype="multipart/form-data">  
+         <input type="file" name="myfile" id="file" multiple/><br/><br/>  
+         <input type="submit" value="Upload Image" name="submit"><br/><br/>  
+         <span id="status"></span>  
+      </form>  
+
+
+
+    
+
+      <script>  
+
+        const uploadFile = async ({url,filename, fileData}) =>{
+
+            const formData = new FormData();
+            formData.append(filename,fileData)
+            console.log(formData)
+
+            try{
+                const req = await fetch(url,
+                { method: 'POST',
+                  headers:{
+                    "Content-Type":'Application/json'
+                  },
+                  body: formData
+               })
+                return await req.json();
+            }
+            catch(err){console.log(err)}
+
+         
+        }
+      
+       
+    const form = document.getElementById('upload');
+    form.addEventListener('submit', e => {
+        
+        e.preventDefault();
+        var fileInput = document.getElementById('file').value;
+        console.log(fileInput," file")
+        const params = {
+            url: `/image`,
+            fileName: 'myfile',
+            fileData: fileInput
+        };
+       
+        uploadFile(params)
+        .then(results => {console.log(results)})
+        .catch(err=>console.log(err))
+
+    }, false);
+      </script> 
+  </body>  
+</html>  

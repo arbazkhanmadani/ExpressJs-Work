@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>product Page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    
+    <div>
+    
+        <img />
+        <h1>This is the shirt of price <small>100rs</small></h1>
+
+        <form id="payment-form" onsubmit="makeOrder()">
+            <input type="hidden" name="name" value="shoes"/>
+            <input type="hidden" name="amount" value="1000"/>
+            <input type="hidden" name="description" value="buying shoes"/>
+            <input type="submit"  value="buy now"/>
+            
+        </form>
+        
+    </div>
+
+ <!-- <script src="https://checkout.razorpay.com/v1/checkout.js"></script> -->
+    <script>
+        
+        const form = document.querySelector('form')
+        console.log(form)
+        //form[0].value
+
+        const formData = new FormData()
+        formData.append("name",form[0].value)
+        formData.append("amount",form[1].value)
+        formData.append("description",form[2].value)
+        
+        console.log(formData)
+
+
+ function makeOrder(e){
+    e.preventDefault()
+
+    //serialization...................
+    const formData = new FormData(form)
+
+   /*const resp =  await fetch('http://127.0.0.1:8080/api/v1/create-order',
+
+        {
+            method:'get',
+            body:formData,
+            headers:{
+                "Content-Type":'application/x-www-form-urlencoded'
+            }
+            
+        }
+    )
+    console.log(resp)
+
+
+    //Options==========================
+const options = { 
+    
+    "key": 'rzp_test_Xezm2VdTjhbNue',  
+    "amount": "5000",  
+    "currency": "INR", 
+    "name": "Arbaz Khan", 
+    "description": "buying shoes", 
+     "image": "https://media.geeksforgeeks.org/wp-content/uploads/20210806114908/dummy-200x200.png", 
+    "order_id": "order_HdPuQW0s9hY9AU",   
+   
+    "handler": function (response){ 
+        console.log(response) 
+        alert("This step of Payment Succeeded"); 
+    }, 
+    
+    //user Data..............................
+    "prefill": { 
+      "contact":"6268961995",  
+      "name": "Arbaz Khan",   
+      "email": "arbazmadani25@gmail.com"
+    }, 
+
+    //Extra info.............................
+   "notes" : { 
+      "description":"Best Course for SDE placements", 
+      "language":"Available in 4 major Languages JAVA,C/C++, Python, Javascript", 
+      "access":"This course have Lifetime Access" 
+    },  
+
+    //color theme.............................
+    "theme": { 
+        "color": "#2300a3" 
+    } 
+}; 
+//var razorpayObject = new Razorpay(options); 
+*/
+   
+}
+    </script>
+</body>
+</html>
